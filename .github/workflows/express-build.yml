@@ -27,7 +27,7 @@ jobs:
         npm install
     
     - name: Build & push Docker image
-    - uses: mr-smithers-excellent/docker-build-push@v6
+      uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: crocobalt/spotify-express-serv
         tags: latest
