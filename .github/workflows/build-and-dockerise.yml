@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: Express-serv-nodj-and-dockerise
 
 on:
   push:
