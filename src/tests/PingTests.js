@@ -10,7 +10,7 @@ function PingTests(props) {
   }, []);
 
   const getPing = async () => {
-    const response = await axios.get('/ping');
+    const response = await axios.get('http://anonomous.fr:8083/userinfos');
     setPing(response.data);
     console.log(ping);
   };
