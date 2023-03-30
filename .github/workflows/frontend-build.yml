@@ -24,7 +24,6 @@ jobs:
 
     - name: Build
       run: |
-        cd frontend
         npm install
 
     - name: Build & push Docker image
@@ -33,6 +32,6 @@ jobs:
         image: crocobalt/statify-front
         tags: latest
         registry: docker.io
-        dockerfile: frontend/Dockerfile
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
