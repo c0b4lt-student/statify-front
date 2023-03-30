@@ -3,8 +3,6 @@ name: react-app and dockerise
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
