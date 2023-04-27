@@ -14,11 +14,11 @@ function LoginButton(props) {
           props.children()
             .then((res) => {//Aller sur la homePage, et stoquer le token
               const instance = axios.create({
-                baseURL: 'http://localhost:8080',
+                baseURL: 'http://localhost:8080/api/',
                 timeout: 1000,
-                headers: {'Authorization': 'Bearer '+res.data.token}
+                headers: {'Authorization': 'Bearer '+res.data.jwtToken}
               });
-              instance('/user/read')
+              instance('album')
                 .then((res) => console.log(res.data))
             })
             .catch((res) => {//Pour le moment afficher "mauvais identifiants"
