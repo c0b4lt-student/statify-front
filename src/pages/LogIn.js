@@ -9,7 +9,7 @@ function LogIn(props) {
   const postReq = async () => {
     return (await axios({
       method: 'post',
-      url: 'http://localhost:8080/api/auth/authenticate',
+      url: 'http://localhost:8083/api/auth/authenticate',
       data : {
         email: email,
         password: password

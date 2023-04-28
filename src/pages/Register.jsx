@@ -9,7 +9,7 @@ function Register(props) {
   const postReq = async () => {
     return (await axios({
       method: 'post',
-      url: 'http://localhost:8080/api/auth/register',
+      url: 'http://localhost:8083/api/auth/register',
       data : {
         email: email,
         password: password
