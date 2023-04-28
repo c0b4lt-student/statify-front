@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-bootstrap";
 import axios from "axios";
 
 function LoginButton(props) {
-  const [axiosInstance, setInstance] = useState(null);
 
   return (
     <>
