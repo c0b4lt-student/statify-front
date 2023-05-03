@@ -1,17 +1,18 @@
 import React from "react";
+import Cookies from "js-cookie";
 import axios from "axios";
 import {Button} from "react-bootstrap";
 
-function PostRequest(props) {
+function PostAuthRequest(props) {
     const postReq = async () => {
-        return axios(await({
+        return axios({
             method: 'post',
-            url: 'http://anonomous.fr:8083/api/auth/register',
+            url: 'http://anonomous.fr:8083/api/auth/' + props.endurl,
             data: {
                 email: props.email,
                 password: props.password
             }
-        }));
+        });
     }
 
   return (
@@ -19,19 +20,20 @@ function PostRequest(props) {
       <Button
         type="button"
         onClick={() => {
-            console.log(props)
             postReq()
                 .then((res) => {
-                    console.log(res);
+                    Cookies.set('jwt_token', res.data.jwtToken/*, { httpOnly: true, secure: true}*/);
+                  window.location.reload();
                 })
                 .catch((res) => {
                     console.log(res);
                 })
         }}
         >
-          test</Button>
+          {props.msg}
+      </Button>
     </>
   );
 }
 
-export default PostRequest;
+export default PostAuthRequest;

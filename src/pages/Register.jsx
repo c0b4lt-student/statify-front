@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import PostRequest from "../components/PostRequest";
+import Cookie from 'js-cookie';
+import PostAuthRequest from "../components/PostAuthRequest";
 
 function Register(props) {
   const [email, setEmail] = useState('');
@@ -7,9 +8,9 @@ function Register(props) {
 
   return (
     <>
-      <h1>Page de connexion</h1>
+      <h1>REGISTER</h1>
       <form>
-        <label htmlFor="username">Nom d'utilisateur :</label>
+        <label htmlFor="username">Email :</label>
         <input type="email" id="username" name="username"
                onChange={(e) => setEmail(e.currentTarget.value)}/>
 	
@@ -17,12 +18,14 @@ function Register(props) {
         <input type="password" id="password" name="password"
                onChange={(e) => setPassword(e.currentTarget.value)}/>
 
-        <PostRequest  type="button"
-                      email={email}
-                      password={password}
-                      msg={"Creer compte"}
-        ></PostRequest>
+        <PostAuthRequest type="button"
+                         email={email}
+                         password={password}
+                         endurl={"register"}
+                         msg={"Creer compte"}
+        ></PostAuthRequest>
       </form>
+        <a href="/login">Je possede deja un compte</a>
     </>
   );
 }
