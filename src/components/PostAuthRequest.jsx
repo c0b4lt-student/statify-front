@@ -23,6 +23,7 @@ function PostAuthRequest(props) {
             postReq()
                 .then((res) => {
                     Cookies.set('jwt_token', res.data.jwtToken/*, { httpOnly: true, secure: true}*/);
+                  axios.defaults.headers.post['Authorization'] = `Bearer ${res.data.jwtToken}`;
                   window.location.reload();
                 })
                 .catch((res) => {

@@ -9,10 +9,13 @@ function PostFileRequest(props) {
   const postReq = async () => {
     return axios({
       method: 'post',
-      url: 'http://anonomous.fr:8083/api/upload/',
+      url: 'http://anonomous.fr:8083/api/upload',
+      headers: {
+        Authorization : `Bearer ${Cookies.get("jwt_token")}`
+      },
       data: {
-        filename: props.file.name,
-        data: content
+        name: props.file.name,
+        fileData: content
       }
     });
   }
@@ -35,7 +38,7 @@ function PostFileRequest(props) {
                 console.log(res.data);
             })
             .catch((res) => {
-
+              console.log(res);
             })
         }}
       >

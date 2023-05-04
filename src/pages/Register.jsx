@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Cookie from 'js-cookie';
 import PostAuthRequest from "../components/PostAuthRequest";
 
 function Register(props) {
