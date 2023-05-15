@@ -7,7 +7,7 @@ function PostAuthRequest(props) {
     const postReq = async () => {
         return axios({
             method: 'post',
-            url: 'http://localhost:8080/api/auth/' + props.endurl,
+            url: 'http://anonomous.fr:8083/api/auth/' + props.endurl,
             data: {
                 email: props.email,
                 password: props.password
