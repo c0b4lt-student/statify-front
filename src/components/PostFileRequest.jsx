@@ -9,7 +9,7 @@ function PostFileRequest(props) {
   const postReq = async () => {
     return axios({
       method: 'post',
-      url: 'http://statifyapp:8080/api/upload',
+      url: 'http://localhost:8080/api/upload',
       headers: {
         Authorization : `Bearer ${Cookies.get("jwt_token")}`
       },
