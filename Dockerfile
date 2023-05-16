@@ -10,4 +10,4 @@ RUN npm install
 COPY . .
 EXPOSE 4200
 
-CMD ["ng", "serve --open"]
+CMD ["ng", "serve --disable-host-check"]
