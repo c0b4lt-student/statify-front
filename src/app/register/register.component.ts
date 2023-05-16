@@ -16,7 +16,7 @@ export class RegisterComponent {
       "username" : this.username,
       "password" : this.password
     };
-    this.http.post("https://anonomous.fr:8080/api/auth/register",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
+    this.http.post("http://statifyapp:8080/api/auth/register",bodyData,{responseType: 'text'}).subscribe((resultData: any)=>
     {
       console.log(resultData.jwtToken);
       alert("Compte créé");

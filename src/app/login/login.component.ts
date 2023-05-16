@@ -21,7 +21,7 @@ export class LoginComponent {
       password: this.password,
     };
 
-    this.http.post("http://localhost:8080/auth/register/login", bodyData).subscribe(  (resultData: any) => {
+    this.http.post("http://statifyapp:8080/auth/register/login", bodyData).subscribe(  (resultData: any) => {
       console.log(resultData);
 
       if (resultData.message == "Email not exits") {
