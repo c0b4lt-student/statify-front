@@ -1,5 +1,13 @@
-FROM node:16.15.1 as node
-WORKDIR /app
-COPY . .
+FROM node:16
+EXPOSE 4200
+
+WORKDIR /usr/src/statify-front
+
+COPY package*.json ./
+
 RUN npm install
-RUN npm run build --prod
+
+COPY . .
+EXPOSE 4200
+
+CMD ["npm", "start"]
